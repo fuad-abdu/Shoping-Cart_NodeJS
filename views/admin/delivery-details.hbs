@@ -1,0 +1,131 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <h2 class="text-center">Delivery Details</h2>
+
+                {{#each details}}
+                <div class="table mt-5 ">
+                    <table>
+                        <tr>
+                            <th>Date:</th>
+                            <td>{{this.date}}</td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>{{this.deliveryDetails.address}}</td>
+                        </tr>
+                        <tr>
+                            <th>Pincode:</th>
+                            <td>{{this.deliveryDetails.pincode}}</td>
+                        </tr>
+                        <tr>
+                            <th>Mobile:</th>
+                            <td>{{this.deliveryDetails.mobile}}</td>
+                        </tr>
+                        {{/each}}
+                        {{#each products}}
+                        <tr>
+                            <th>Product:</th>
+                            <td>{{this.product.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Quantity:</th>
+                            <td>{{this.quantity}}</td>
+                        </tr>
+                
+                        {{/each}}
+                        {{#each details}}
+                        <tr>
+                            <th>Total:</th>
+                            <td>Rs. {{this.totalAmount}}</td>
+                        </tr>
+                        <tr>
+                            <th>Payment:</th>
+                            <td>{{this.paymentMethod}}</td>
+                        </tr>
+                        <tr>
+                            <th>Status:</th>
+                            <td>{{this.status}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+
+            </div>
+            <div class="col-md-6 text-center my-auto">
+
+                {{#each details}}
+                <h1>{{this.userId}}</h1>
+                <a href="#" onclick="funPacked('{{this.userId}}')" class="btn btn-primary mb-5 mr-2"> Packed <img src="/images/box.svg" alt=""></a>
+                <a href="#" onclick="funShipped('{{this.userId}}'" class="btn btn-warning mb-5 mr-2"> Shipped <br> <img style="width: 55px; height: 55px;" src="/images/delivery-truck.svg" alt=""></a>
+                <a href="#" class="btn btn-success mb-5 mr-2"> Delivered <br><img style="width: 55px; height: 55px;" src="/images/delivered.svg" alt=""></a>
+                {{/each}}
+
+                <h2 class="text-primary">Product Image</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150" height="150" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <defs>
+                        <linearGradient x1="85.99731" y1="13.01556" x2="85.99731" y2="160.30669"
+                            gradientUnits="userSpaceOnUse" id="color-1_71042_gr1">
+                            <stop offset="0" stop-color="#b0b0b0"></stop>
+                            <stop offset="1" stop-color="#2e2e2e"></stop>
+                        </linearGradient>
+                        <linearGradient x1="85.98925" y1="24.07194" x2="85.98925" y2="143.706"
+                            gradientUnits="userSpaceOnUse" id="color-2_71042_gr2">
+                            <stop offset="0" stop-color="#e8e8e8"></stop>
+                            <stop offset="1" stop-color="#666666"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g>
+                            <path
+                                d="M77.9375,10.75h16.125c2.96431,0 5.375,2.44025 5.375,5.4395v102.0605h8.10819c1.93231,0 3.65769,1.03738 4.61712,2.77081c0.99706,1.80331 0.93794,3.99631 -0.1505,5.72975l-19.3285,30.78531c-1.45663,2.31663 -3.95869,3.70069 -6.69456,3.70069c-2.7305,0 -5.22719,-1.38137 -6.67844,-3.68994l-19.33119,-30.80413c-1.08575,-1.72806 -1.14487,-3.92106 -0.1505,-5.72169c0.95944,-1.73613 2.6875,-2.77081 4.61981,-2.77081h8.11356v-102.0605c0,-2.99925 2.41069,-5.4395 5.375,-5.4395zM96.75,123.625h-2.6875v-107.4355l-16.125,-0.0645v107.5h-13.39988c-0.02956,0.05644 -0.0645,0.16125 0,0.26069l19.3285,30.80412c0.6665,1.05888 1.70925,1.17444 2.1285,1.17444c0.42194,0 1.47006,-0.11556 2.14194,-1.1825l19.32581,-30.788c0.08869,-0.14244 -0.01075,-0.29025 -0.02688,-0.30637z"
+                                fill="url(#color-1_71042_gr1)"></path>
+                            <path
+                                d="M83.3125,129v-107.5h5.375v107.5h6.69725c1.04812,0 1.70387,1.13144 1.18519,2.03981l-8.24794,12.76294c-1.02662,1.79794 -3.62006,1.79794 -4.644,0l-8.26406,-12.76562c-0.52137,-0.90838 0.13438,-2.03713 1.17981,-2.03713z"
+                                fill="url(#color-2_71042_gr2)"></path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            {{#each products}}
+
+            <div class="col-md-3 p-3 mt-4">
+
+                <div class="card " style="width: 100%; height: 100%;">
+                    <img class="Img ml-4 mt-1 mx-auto" style="height: auto; "
+                        src="/product-images/{{this.product._id}}.jpg">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{this.product.name}}</h5>
+
+                        <p class="card-text">{{this.product.description}}</p>
+
+                        <h6 class="card-text">Rs.{{this.product.price}}</h6>
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+</section>
+
+<style>
+    th {
+        color: rgb(55, 55, 255);
+    }
+
+    .Img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
+</style>

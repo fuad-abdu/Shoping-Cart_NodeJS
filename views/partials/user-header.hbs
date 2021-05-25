@@ -1,0 +1,124 @@
+    <header class="" style="position: fixed; width: 100%;  left: 0px; top: 0px; z-index:1;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-5">
+            <a class="navbar-brand text-white" style="font-family: Roboto,Arial,sans-serif; font-weight: 500;"
+                href="/">Shoping Cart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item dropdown">
+                        <a class=" dropdown nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/mobiles">Mobiles</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/electronics">Electronics</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/men-fashion">Fashion</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/beauty">Beauty, Toys & more</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/furniture">Furniture</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/home-essential">Home Essential</a>
+
+                        </div>
+                    </li>
+                    {{#if user}}
+                    <li class="nav-item active ">
+                        <a class="nav-link text-white ml-3" href="/orders">Orders <svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24"
+                                style="fill:rgb(255, 255, 255);transform:;-ms-filter:">
+                                <path fill="none" d="M5 9v10h14.002L19 9H5zM16 13H8v-2h8V13zM20.002 7L20 5 4 5 4 7 20 7z">
+                                </path>
+                                <path
+                                    d="M20,3H4C2.897,3,2,3.897,2,5v2c0,0.736,0.405,1.375,1,1.722V19c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2V8.722 C21.595,8.375,22,7.736,22,7V5C22,3.897,21.103,3,20,3z M4,5h16l0.002,2H20H4V5z M5,19V9h14l0.002,10H5z">
+                                </path>
+                                <path d="M8 11H16V13H8z"></path>
+                            </svg><span class="glyphicon glyphicon-list-alt"></span></span><span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    {{/if}}
+
+                    <li class="nav-item active ">
+                        <a class="nav-link text-white ml-3 bg-primary" href="/cart">Cart <span class="badge badge-light"
+                                id="cart-count">{{cartCount}}</span> <span class="sr-only">(current)</span> </a>
+                    </li>
+
+                    {{#if user}}
+                    <li class="nav-item active ">
+                        <a class="nav-link text-white ml-3" href="/wishlist">WishList <i class='far fa-heart'
+                                style='font-size:18px;color:white'></i><span class="sr-only">(current)</span></a>
+                    </li>
+                    {{/if}}
+
+                    <form class="form-inline ml-5 my-auto my-lg-0">
+                        <input id="myInput" class="form-control mr-sm-2" style="width: 500px; height: 33px;" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path
+                                    d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z">
+                                </path>
+                            </svg></button>
+                    </form>
+
+                </ul>
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="drop btn btn-outline-light dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="border-color: white;" width="24"
+                            height="24">
+                            <path fill-rule="evenodd"
+                                d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z">
+                            </path>
+                        </svg>
+
+                        {{#if user}}
+
+                        {{user.name}}
+
+                        {{else}}
+
+                        Account
+
+                        {{/if}}
+                    </button>
+                    <div class="ha dropdown-menu dropdown-menu-right">
+                        {{#if user}}
+                        <a class="dropdown-item" href="/logout">
+                            <img style="width: 22px; height: 22px;" src="https://img.icons8.com/ios/50/000000/export.png" />
+                            Logout
+                        </a>
+                        <a class="dropdown-item" href="/profile">
+                            <img class="" style="width: 22px; height: 22px;"
+                                src="https://img.icons8.com/ios/50/000000/user-male-circle.png" /> Profile
+                        </a>
+                        {{else}}
+                        <a class="dropdown-item" href="/user-login">
+                            <img style="width: 22px; height: 22px;" src="https://img.icons8.com/ios/50/000000/import.png" />
+                            Login
+                        </a>
+                        <a class="dropdown-item" href="/signup">
+                            <img style="width: 22px; height: 22px;"
+                                src="https://img.icons8.com/ios/50/000000/add-administrator.png" /> Create Account
+                        </a>
+                        {{/if}}
+                    </div>
+                </div>
+        </nav>
+    </header>
+    
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>

@@ -1,0 +1,65 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white" style="font-family: Roboto,Arial,sans-serif; font-weight: 500;"
+            href="/admin">Admin Pannel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item active ">
+                    <a class="nav-link text-white" href="/admin/products">All products<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link text-white" href="/admin/all-orders">All orders<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link text-white" href="/admin/all-users">All users<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="border-color: white;" width="24"
+                        height="24">
+                        <path fill-rule="evenodd"
+                            d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z">
+                        </path>
+                    </svg>
+                    {{#if Admin}}
+
+                    {{Admin.name}}
+
+                    {{else}}
+
+                    Account
+
+                    {{/if}}
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    
+                    {{#if Admin}}
+                    <a class="dropdown-item" href="/admin/admin-logout">
+                        <img style="width: 22px; height: 22px;" src="https://img.icons8.com/ios/50/000000/export.png" />
+                        Logout
+                    </a>
+                    {{else}}
+                    <a class="dropdown-item" href="/admin/admin-login">
+                        <img style="width: 22px; height: 22px;" src="https://img.icons8.com/ios/50/000000/import.png" />
+                        Login
+                    </a>
+                    <a class="dropdown-item" href="/admin/admin-signup">
+                        <img style="width: 22px; height: 22px;"
+                            src="https://img.icons8.com/ios/50/000000/add-administrator.png" /> Create Account
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>

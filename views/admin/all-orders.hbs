@@ -1,0 +1,28 @@
+<section>
+    <div class="container mt-5">
+        <h3 class="text-center">ALL Orders</h3>
+        <table class="table mt-5 pt-5" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Delivery Details</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Payment Method</th>
+                    <th scope="col">Option</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+                    <td>{{this.date}}</td>
+                    <td>{{this.deliveryDetails.address}}</td>
+                    <td>{{this.totalAmount}}</td>
+                    <td>{{this.paymentMethod}}</td>
+                    <td><a href="/admin/deliveryDetails/{{this._id}}" class="btn btn-primary">More Details..</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>

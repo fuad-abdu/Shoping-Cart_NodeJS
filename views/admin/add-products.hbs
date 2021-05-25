@@ -1,0 +1,97 @@
+<section>
+    <div class="container mt-4">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h2 class="text-center">Add Products</h2>
+
+                <form action="/admin/add-products" enctype="multipart/form-data" method="POST">
+
+                    <label for="" style="font-weight: bolder;">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Name">
+
+                    <label for="" style="font-weight: bolder;">Category</label> <br>
+
+                    <div class="border">
+                        <label for="">Mobile </label>
+                        <input type="radio" name="category" value="Mobile"><br>
+                    </div> <br>
+
+                    <div class="border">
+                        <label for="">Electronics </label><br>
+                        <label for=""> Laptop</label>
+                        <input type="radio" name="category" value="Laptop">
+                        <label for=""> Camera</label>
+                        <input type="radio" name="category" value="Camera">
+                        <label for="">Clock &  Watch</label>
+                        <input type="radio" name="category" value="Watch"><br>
+                        <label for=""> Air Conditioner</label>
+                        <input type="radio" name="category" value="Air Conditioner">
+                        <label for=""> Washing Machine</label>
+                        <input type="radio" name="category" value="Washing Machine">
+                        <label for=""> Mixer</label>
+                        <input type="radio" name="category" value="Mixer">
+                        <label for=""> Television</label>
+                        <input type="radio" name="category" value="TV"><br>
+                    </div><br>
+
+                    <div class="border">
+                        <label for=""> Fashion </label><br>
+                        <label for=""> Men</label>
+                        <input type="radio" name="category" value="Men">
+                        <label for=""> Women</label>
+                        <input type="radio" name="category" value="Women">
+                        <label for=""> Kids </label>
+                        <input type="radio" name="category" value="Kids">
+                        <label for=""> Foot Wear </label>
+                        <input type="radio" name="category" value="Footwear">
+                    </div><br>
+
+                    <div class="border">
+                        <label for="">Toys</label>
+                        <input type="radio" name="category" value="Toys">
+                        <label for="">Beauty</label>
+                        <input type="radio" name="category" value="Beauty">
+                    </div><br>
+
+                    <div class="border">
+                        <label for="">Furniture</label>
+                        <input type="radio" name="category" value="Furniture">
+                    </div><br>
+
+                    <div class="border">
+                        <label for="">Home Esential</label><br>
+                        <label for="">Cookware & Dining</label>
+                        <input type="radio" name="category" value="cookware">
+                        <label for="">Fitness & Sports</label>
+                        <input type="radio" name="category" value="fitness">
+                        <label for="">Tools</label>
+                        <input type="radio" name="category" value="tools">
+                        <label for="">Home Improvement</label>
+                        <input type="radio" name="category" value="clean">
+                    </div><br>
+
+                    <label for="" style="font-weight: bolder;">Price</label>
+                    <input type="text" class="form-control" name="price" placeholder="Price">
+
+                    <label for="" style="font-weight: bolder;">Description</label>
+                    <input type="text" name="description" class="form-control" placeholder="Description">
+
+                    <label for="" style="font-weight: bolder;">Image</label>
+                    <input type="file" class="form-control " name="Image" placeholder="Image">
+
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .border{
+        padding-left: 11px;
+    }
+</style>

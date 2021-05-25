@@ -1,0 +1,38 @@
+<section>
+    <div class="container">
+
+        <div class="" style="margin-top: 140px;">
+            <table class="table mt-5 " style="">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Item</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+
+                        <td><img style="width: 70px;height: auto;" src="/product-images/{{this.product._id}}.jpg"
+                                alt=""></td>
+                        <td>{{this.product.name}}</td>
+
+                        <td>Rs.{{this.product.price}}</td>
+
+                        <td>
+                            <a href="" onclick="deleteWishProduct('{{this._id}}','{{this.product._id}}')"
+                                class="btn btn-danger">Remove</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+<div class="container">
+
+    <form action="/place-order" class="mt-5 pt-5 " method="POST" id="checkout-form">
+        <div class="row">
+            <div class="col-md-6 float-left">
+                <h2 class="mt-2">Enter Delivery Details</h2>
+
+                <div class="form-group mt-5">
+                    <label for="">Address</label>
+                    <input type="text" class="form-control" id="address" name="address">
+
+                    <label for="">Pincode</label>
+                    <input type="text" class="form-control" id="pincode" name="pincode">
+
+                    <label for="">Mobile</label>
+                    <input type="tel" class="form-control" id="mobile" name="mobile">
+                    
+                    <input type="text" name="userId" id="" value="{{user._id}}" hidden>
+                </div>
+            </div>
+
+            <div class="col float-right " style="margin-left: 764px; margin-top: -219px; margin-right: 70px; ">
+                <div class="container checkout">
+                    <div class="border border-primary"
+                        style="border:solid; height: 240px; width: auto; padding-top: 10px; padding-left: 10px;">
+                        <h5 class="text-center">Total Amount: Rs.{{totalAmount}}</h5>
+
+                        <hr>
+
+                        <p>Payment Method</p>
+
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="payment" value="COD" id="COD">
+                                COD
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="payment" value="online-payment" id="online-payment">
+                                Online Payment
+                            </label>
+                        </div>
+
+                        <button href="#" type="submit" class="btn btn-primary mt-3 mr-2 float-right">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
