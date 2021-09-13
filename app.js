@@ -10,6 +10,7 @@ var fileupload = require('express-fileupload')
 var app = express();
 var db = require('./config/connection')
 var session = require('express-session')
+require('dotenv').config()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -25,7 +26,7 @@ db.connect((err)=>{
   if(err){
     console.log(err);
   }else{
-    console.log('connected');
+    console.log('Database Connected');
   }
 })
 app.use('/', userRouter);
